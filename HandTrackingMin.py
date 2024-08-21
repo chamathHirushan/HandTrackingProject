@@ -20,6 +20,14 @@ while True:
 
     if (results.multi_hand_landmarks):
         for handLandMarks in results.multi_hand_landmarks:  # extract the information of each hand
+            for id, lm in enumerate(handLandMarks.landmark):
+
+                h, w, c = img.shape  # height width chanel of the image
+                cx, cy = int(lm.x * w), int(lm.y * h)
+                print(id, cx, cy)
+
+                # if id == 4:
+                cv2.circle(img, (cx, cy), 15, (255, 0, 255), cv2.FILLED)
             # draw on the original image
             mpDraw.draw_landmarks(img, handLandMarks, mpHands.HAND_CONNECTIONS)
 
