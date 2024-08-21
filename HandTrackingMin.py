@@ -5,7 +5,7 @@ import time
 cap = cv2.VideoCapture(0)  # capture from webcam 0
 
 mpHands = mp.solutions.hands
-hands = mpHands.Hands()  # only takes RGB color images as inputs
+hands = mpHands.Hands()  # this only takes RGB color images as inputs
 mpDraw = mp.solutions.drawing_utils
 
 pTime = 0  # previous time
