@@ -27,7 +27,8 @@ class handDetector:
             for handLandMarks in self.results.multi_hand_landmarks:  # Iterate over hand landmarks
                 # Draw landmarks on the original image
                 self.mpDraw.draw_landmarks(
-                    img, handLandMarks, self.mpHands.HAND_CONNECTIONS)
+                    img, handLandMarks, self.mpHands.HAND_CONNECTIONS,
+                    self.mpDraw.DrawingSpec(color=(255, 0, 0)))
         return img
 
     def findPosition(self, img, handNo=0, draw=True):
